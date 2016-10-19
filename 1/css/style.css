@@ -1,0 +1,155 @@
+/* Ovo nam je fallback */
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'), local('OpenSans'), local('OpenSans-Regular'), url('../fonts/OpenSans-Regular-webfont.eot'),
+         url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Bold'), local('OpenSans Bold'), local('OpenSans-Bold'), url('../fonts/OpenSans-Bold-webfont.eot'), url('../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+body {
+    margin: 0;padding: 0;
+    font-family: "Open Sans", "Calibri", "Seguoe UI", sans-serif;
+    font-size: 1rem;
+    color: #444;
+}
+
+.container {
+    flex: 1;
+    width: 960px;
+    margin: 1rem auto;
+}
+@media(max-width: 768px) {
+    .container {
+        flex: 1;
+        width: auto;
+        margin: 1rem 2vw;
+    }   
+}
+@media(min-width: 768px) {
+    .container {
+        flex: 1;
+        width: 750px;
+        margin: 1rem auto;
+    }
+}
+@media(min-width: 992px) {
+    .container {
+        flex: 1;
+        width: 970px;
+        margin: 1rem auto;
+    }
+}
+/*@media(min-width: 1200px) {
+    .container {
+        flex: 1;
+        width: 1170px;
+        margin: 1rem auto;
+    }   
+}*/
+
+#links-container {
+    /*flex: 1; jer nemamo nista vise u kontenjeru osim ovog pa ne triba!!! */
+    width: 970px;
+    margin: 1rem auto;
+}
+@media(max-width: 768px) {
+    #links-container {
+        width: auto;
+        margin: 1rem 2vw;
+        flex-direction: column; /* not work ???*/
+    }   
+}
+@media(min-width: 768px) {
+    #links-container {
+        width: 750px;
+        margin: 1rem auto;
+    }
+}
+@media(min-width: 992px) {
+    #links-container {
+        width: 970px;
+        margin: 1rem auto;
+    }
+}
+
+#links-container a {
+    text-transform: uppercase;
+    color: #FFF;
+    font-weight: bold;
+    margin-right: 2rem;
+    opacity: .65;
+}
+#links-container a:hover {
+    opacity: 1;
+}
+#links-container a.active {
+    opacity: 1;
+    border-bottom: 3px solid #929292;
+}
+
+header {
+    display: flex;
+    background-color: #3F51B5;
+    min-height: 5vh;
+    /*justify-content: space-between;*/
+}
+@media(max-width: 560px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+/* Malo tipografije... */
+h1 {
+    font-size: 42px;
+}
+h2 {
+    font-size: 24px;
+}
+
+#intro {
+    display: flex;
+}
+#intro > h2 {
+    text-transform: uppercase;
+    align-self: center;
+    margin-left: 1rem;
+    opacity: .65;
+}
+
+#user {
+    display: flex;
+    justify-content: flex-end;
+}
+#user a {
+    margin-left: 2rem;
+}
+
+#panel {
+    display: flex;
+    flex: 1 1 20em;
+    border: 3px solid #444;
+    border-radius: 3px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
