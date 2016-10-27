@@ -1,4 +1,4 @@
-/* Ovo nam je fallback */
+/* Fonts */
 @font-face {
     font-family: 'Open Sans';
     src: local('Open Sans'), local('OpenSans'), local('OpenSans-Regular'), url('../fonts/OpenSans-Regular-webfont.eot'),
@@ -25,7 +25,7 @@ a {
 
 body {
     margin: 0;padding: 0;
-    font-family: "Open Sans", "Calibri", "Seguoe UI", sans-serif;
+    font-family: "Open Sans", "Calibri", "Segoe UI", sans-serif;
     font-size: 1rem;
     color: #444;
 }
@@ -57,13 +57,6 @@ body {
         margin: 1rem auto;
     }
 }
-/* @media(min-width: 1200px) {
-    .container {
-        flex: 1;
-        width: 1170px;
-        margin: 1rem auto;
-    }   
-} */
 
 /* Some general header rules */
 header {
@@ -80,7 +73,6 @@ header {
 }
 /* Container for the links at the top */
 #links-container {
-    /*flex: 1; jer nemamo nista vise u kontenjeru osim ovog pa ne triba!!! */
     width: 970px;
     margin: 1rem auto;
 }
@@ -121,7 +113,7 @@ header {
     border-bottom: 3px solid #929292;
 }
 
-/* Malo tipografije... */
+/* Headings */
 h1 {
     font-size: 42px;
 }
@@ -175,7 +167,7 @@ h3 {
 
 /* Carousel... */
 #carousel {
-    position: relative; /* We need this because of the arrows */
+    position: relative;
     display: flex;
     border: 3px solid #000;
     border-radius: 5px;
@@ -184,7 +176,6 @@ h3 {
     padding: 1rem;
 }
 #carousel > #desc {
-    /* border: 1px solid #FF0000; */
     width: 25%;
 }
 @media(max-width: 992px) { /* Responsiveness for the carousel */
@@ -203,8 +194,7 @@ h3 {
     }
 }
 #carousel > #img {
-    /* border:  1px solid #00FF00; */
-    width:  60%;
+    width: 60%;
     align-self: center;
 }
 #carousel > #desc > h2 {
@@ -229,7 +219,7 @@ h3 {
     font-size: 1.3rem;
 }
 /* Carousel buttons */
-button { /* Some general button definition to make them look somewhat decent */
+button {
     border-radius: 5px;
     background-color: #8bc34a;
     color: #FFF;
@@ -257,17 +247,17 @@ button:hover {
 }
 /* Carousel arrows! */
 #arrow-left {
-    position: absolute; /* Looks for the first relative parent! */
+    position: absolute;
     top: 50%;
     left: -7%;
-    transform: translateY(-50%); /* bottom: -50%; */
+    transform: translateY(-50%);
     font-size: 4rem;
 }
 #arrow-right {
-    position: absolute; /* Looks for the first relative parent! */
+    position: absolute;
     top: 50%;
     right: -7%;
-    transform: translateY(-50%); /* bottom: -50%; */
+    transform: translateY(-50%);
     font-size: 4rem;
 }
 .arrow-nav {
@@ -276,18 +266,17 @@ button:hover {
 .arrow-nav:hover {
     opacity: .65;
 }
-@media(max-width: 992px) { /* Responsiveness for the arrows... I tried. */
+/* Responsiveness for the arrows... I tried. */
+@media(max-width: 992px) {
     #arrow-left {
         position: absolute;
         top: 6%;
-        /* float: left; */
         left: 1%;
         font-size: 4rem;
     }
     #arrow-right {
         position: absolute;
         top: 6%;
-        /* float: right; */
         right: 1%;
         font-size: 4rem;
     }
@@ -297,20 +286,17 @@ button:hover {
 #images {
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
     margin-top: 3rem;
     border: 3px solid #000;
     border-radius: 5px;
     padding: 2% 5% 2% 2%;
 }
-/* Note to self: add display:flex to the parent and flex:1 to the boxes for equal with boxes */
 article {
-    position: relative; /* Because of the X thingie */
-    display: flex; /* Otherwise can't center the images below */
-    flex-direction: column; /* For the both title and the image */
+    position: relative;
+    display: flex;
+    flex-direction: column;
     flex: 1;
     margin-left: 4%;
-    /* border: 1px solid #FF0000; */
 }
 article > img {
     /* Don't overflow it */
@@ -330,7 +316,7 @@ article > .img-desc > button {
     padding-bottom: .5rem;
 }
 article > .fa.fa-times {
-    position: absolute; /* Look for the first relative, which is the article. */
+    position: absolute;
     top: -2%;
     right: -2%;
     font-size: 1.5rem;
@@ -359,7 +345,7 @@ footer > #footer-icons {
     font-size: 3rem;
     margin-left: 2vw;
 }
-#footer-icons:first-child {
+.fa-facebook-official {
     color: #8b9dc3;
 }
 .fa-twitter-square {
@@ -378,7 +364,7 @@ footer > #footer-links {
     font-weight: 700;
     letter-spacing: 1.5px;
 }
-footer a {
+#footer-links a {
     text-transform: uppercase;
     text-decoration: none;
     color: #FFF;
@@ -386,10 +372,11 @@ footer a {
     margin-right: 2rem;
     opacity: .65;
 }
-footer a:hover {
+#footer-links a:hover {
     opacity: 1;
 }
-@media(max-width: 560px) { /* Responsiveness! */
+/* Responsiveness! */
+@media(max-width: 560px) {
     footer {
         flex-direction: column;
     }
