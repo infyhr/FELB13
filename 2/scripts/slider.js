@@ -5,7 +5,7 @@ $(document).ready(function(){
         {
             title: "Google Nexus 5X",
             imagePath: "images/5x4.jpg",
-            grade: 5,
+            grade: 0,
             body: `
                 The Nexus 5X offers top-line performance in a compact,
                 lightweight design with the new
@@ -18,7 +18,7 @@ $(document).ready(function(){
         {
             title: "Google Pixel",
             imagePath: "images/pixel.jpg",
-            grade: 0,
+            grade: 3,
             body: `
                 It has a camera that takes stunning photos in any light. 
                 A battery that lasts all day. Unlimited storage for all your photos and videos.
@@ -26,6 +26,17 @@ $(document).ready(function(){
                 Only on Verizon, the next gen network. With Google Duo you can video call with
                 friends and family on Android & iOS. Spend less time buffering and more time
                 talking with 50% faster peak speeds in 450 cities nationwide on Verizon LTE Advanced.
+            `
+        },
+        {
+            title: "Huawei Nexus 6P",
+            imagePath: "images/nexus-6p.jpg",
+            grade: 5,
+            body: `
+                Nexus 6P is the ultimate Android experience. Enjoy the freshest, fastest version.
+                An evolving core keeps you up to date with the latest software:
+                Pure and smart, Android 6.0 Marshmallow is matched by Huawei’s power and iconic design, 
+                featuring the latest Android version with over the air upgrades.
             `
         }
     ];
@@ -59,7 +70,7 @@ $(document).ready(function(){
     }
 
     // Hook buttons
-    $("#carousel").on("click", "#arrow-left", () => {
+    $("#carousel").on("click", "#arrow-left",  () => {
         changeSlide(0);
     });
     $("#carousel").on("click", "#arrow-right", () => {
@@ -69,19 +80,32 @@ $(document).ready(function(){
     // Hook stars
     $("#carousel").on("click", "#rating > i", function() {
         // Update all the previous stars...
-        let lastStar = 0;
+        let lastStar = 1;
         $(this).prevAll().each(function(index) {
-            $(this).replaceWith("<i name=\"star-" + index+1 + "\" class=\"fa fa-star\" aria-hidden=\"true\"></i>");
-            lastStar = index;
+            $(this).replaceWith("<i class=\"fa fa-star\" aria-hidden=\"true\"></i>");
+            lastStar++;
         });
 
         // Might as well do it for the remaining ones now.
         $(this).nextAll().each(function(index) {
-            $(this).replaceWith("<i name=\"star-" + index+1 + "\" class=\"fa fa-star-o\" aria-hidden=\"true\"></i>");
+            $(this).replaceWith("<i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>");
         });
 
         // And now the current one.
-        $(this).replaceWith("<i name=\"star-" + lastStar + "\" class=\"fa fa-star\" aria-hidden=\"true\"></i>");
+        $(this).replaceWith("<i class=\"fa fa-star\" aria-hidden=\"true\"></i>");
+
+        // Update the object itself now.
+        sliderData[slideIndex].grade = lastStar;
+    });
+
+    // Hook the edit button
+    $("#carousel").on("click", "#edit", () => {
+        const $selector = $("#carousel > #desc > p");
+        const newBody  = prompt("New card body", $selector.text());
+        if(!newBody) return;
+
+        $("#carousel > #desc > p").text(newBody);
+        sliderData[slideIndex].body = newBody;
     });
 
     // Start off with a first slide.
