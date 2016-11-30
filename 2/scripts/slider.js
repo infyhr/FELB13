@@ -69,6 +69,15 @@ $(document).ready(function(){
         getNewSlide();
     }
 
+    function insertCard(title, imagePath) {
+        const $cardTemplate = $("#card-template").html();
+
+        $("#images").append(Mustache.render(
+            $cardTemplate,
+            {imagePath: imagePath, title: title}
+        ));
+    }
+
     // Hook buttons
     $("#carousel").on("click", "#arrow-left",  () => {
         changeSlide(0);
@@ -80,10 +89,10 @@ $(document).ready(function(){
     // Hook stars
     $("#carousel").on("click", "#rating > i", function() {
         // Update all the previous stars...
-        let lastStar = 1;
+        let currentStar = 1;
         $(this).prevAll().each(function(index) {
             $(this).replaceWith("<i class=\"fa fa-star\" aria-hidden=\"true\"></i>");
-            lastStar++;
+            currentStar++;
         });
 
         // Might as well do it for the remaining ones now.
@@ -95,17 +104,35 @@ $(document).ready(function(){
         $(this).replaceWith("<i class=\"fa fa-star\" aria-hidden=\"true\"></i>");
 
         // Update the object itself now.
-        sliderData[slideIndex].grade = lastStar;
+        sliderData[slideIndex].grade = currentStar;
     });
 
     // Hook the edit button
     $("#carousel").on("click", "#edit", () => {
         const $selector = $("#carousel > #desc > p");
-        const newBody  = prompt("New card body", $selector.text());
+        const newBody   = prompt("New card body", $selector.text());
         if(!newBody) return;
 
-        $("#carousel > #desc > p").text(newBody);
+        $selector.text(newBody);
         sliderData[slideIndex].body = newBody;
+    });
+
+    // Hook the Add new image button
+    $("#add-image").on("click", () => {
+        const imagePath = prompt("Enter the image path", "images/Google-Nexus-5.jpg");
+        if(!imagePath) return;
+
+        const title = prompt("Enter the title");
+        if(!title) return;
+
+        insertCard(title, imagePath);
+    });
+
+    // Hook the delete button
+    $("#images").on("click", "article > i.fa.fa-times", e => {
+        const targetImage = e.currentTarget;
+        const $image = $(targetImage).parent("article");
+        $image.fadeOut(() => $image.remove());
     });
 
     // Start off with a first slide.

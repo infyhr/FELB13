@@ -289,6 +289,7 @@ button:hover {
 #images {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 3rem;
     border: 3px solid #000;
     border-radius: 5px;
@@ -297,8 +298,9 @@ button:hover {
 article {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    flex: 1;
+    flex: 1 1 25%;
     margin-left: 4%;
 }
 article > img {
