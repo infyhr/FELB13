@@ -1,5 +1,7 @@
 $(document).ready(function(){
-    let slideIndex = 0;
+    let   slideIndex = 0;
+    const filledStar = '<i class="fa fa-star"   aria-hidden="true"></i>';
+    const emptyStar  = '<i class="fa fa-star-o" aria-hidden="true"></i>';
 
     const sliderData = [
         {
@@ -47,11 +49,11 @@ $(document).ready(function(){
         // Append graded stars
         sliderData[slideIndex].htmlRating = "";
         for(let i = 0; i < sliderData[slideIndex].grade; i++) {
-            sliderData[slideIndex].htmlRating += "<i name=\"star-" + i + "\" class=\"fa fa-star\" aria-hidden=\"true\"></i>";
+            sliderData[slideIndex].htmlRating += filledStar;
         }
         // Append the rest
         for(let i = sliderData[slideIndex].grade; i < 5; i++) {
-            sliderData[slideIndex].htmlRating += "<i name=\"star-" + i + "\" class=\"fa fa-star-o\" aria-hidden=\"true\"></i>";   
+            sliderData[slideIndex].htmlRating += emptyStar;
         }
 
         $("#carousel").html(Mustache.render($slideTemplate, sliderData[slideIndex]));
@@ -78,6 +80,26 @@ $(document).ready(function(){
         ));
     }
 
+    function updateStars(stars) {
+        let starCount = 1;
+
+        // Update all the previous stars...
+        $(stars).prevAll().each(function(index) {
+            $(this).replaceWith(filledStar);
+            starCount++;
+        });
+
+        // Might as well do it for the remaining ones now.
+        $(stars).nextAll().each(function(index) {
+            $(this).replaceWith(emptyStar);
+        });
+
+        // And now the current one.
+        $(stars).replaceWith(filledStar);
+
+        return starCount;
+    }
+
     // Hook buttons
     $("#carousel").on("click", "#arrow-left",  () => {
         changeSlide(0);
@@ -86,25 +108,9 @@ $(document).ready(function(){
         changeSlide(1);
     });
 
-    // Hook stars
+    // Hook rating
     $("#carousel").on("click", "#rating > i", function() {
-        // Update all the previous stars...
-        let currentStar = 1;
-        $(this).prevAll().each(function(index) {
-            $(this).replaceWith("<i class=\"fa fa-star\" aria-hidden=\"true\"></i>");
-            currentStar++;
-        });
-
-        // Might as well do it for the remaining ones now.
-        $(this).nextAll().each(function(index) {
-            $(this).replaceWith("<i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>");
-        });
-
-        // And now the current one.
-        $(this).replaceWith("<i class=\"fa fa-star\" aria-hidden=\"true\"></i>");
-
-        // Update the object itself now.
-        sliderData[slideIndex].grade = currentStar;
+        sliderData[slideIndex].grade = updateStars(this);
     });
 
     // Hook the edit button
