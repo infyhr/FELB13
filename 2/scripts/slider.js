@@ -20,7 +20,7 @@ $(document).ready(function(){
         {
             title: "Google Pixel",
             imagePath: "images/pixel.jpg",
-            grade: 3,
+            grade: 0,
             body: `
                 It has a camera that takes stunning photos in any light. 
                 A battery that lasts all day. Unlimited storage for all your photos and videos.
@@ -33,7 +33,7 @@ $(document).ready(function(){
         {
             title: "Huawei Nexus 6P",
             imagePath: "images/nexus-6p.jpg",
-            grade: 5,
+            grade: 0,
             body: `
                 Nexus 6P is the ultimate Android experience. Enjoy the freshest, fastest version.
                 An evolving core keeps you up to date with the latest software:
