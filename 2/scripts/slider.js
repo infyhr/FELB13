@@ -71,15 +71,6 @@ $(document).ready(function(){
         getNewSlide();
     }
 
-    function insertCard(title, imagePath) {
-        const $cardTemplate = $("#card-template").html();
-
-        $("#images").append(Mustache.render(
-            $cardTemplate,
-            {imagePath: imagePath, title: title}
-        ));
-    }
-
     function updateStars(stars) {
         let starCount = 1;
 
@@ -121,17 +112,6 @@ $(document).ready(function(){
 
         $selector.text(newBody);
         sliderData[slideIndex].body = newBody;
-    });
-
-    // Hook the Add new image button
-    $("#add-image").on("click", () => {
-        const imagePath = prompt("Enter the image path", "images/Google-Nexus-5.jpg");
-        if(!imagePath) return;
-
-        const title = prompt("Enter the title");
-        if(!title) return;
-
-        insertCard(title, imagePath);
     });
 
     // Hook the delete button
