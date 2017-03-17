@@ -1,0 +1,394 @@
+/* Fonts */
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'), local('OpenSans'), local('OpenSans-Regular'), url('../fonts/OpenSans-Regular-webfont.eot'),
+         url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Bold'), local('OpenSans Bold'), local('OpenSans-Bold'), url('../fonts/OpenSans-Bold-webfont.eot'), url('../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+a {
+    color: rgba(0, 0, 0, 0.65);
+}
+
+body {
+    margin: 0;padding: 0;
+    font-family: "Open Sans", "Calibri", "Segoe UI", sans-serif;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Responsive containers */
+.container {
+    flex: 1;
+    width: 960px;
+    margin: 1rem auto;
+}
+@media(max-width: 768px) {
+    .container {
+        flex: 1;
+        width: auto;
+        margin: 1rem 2vw;
+    }   
+}
+@media(min-width: 768px) {
+    .container {
+        flex: 1;
+        width: 750px;
+        margin: 1rem auto;
+    }
+}
+@media(min-width: 992px) {
+    .container {
+        flex: 1;
+        width: 970px;
+        margin: 1rem auto;
+    }
+}
+
+header {
+    display: flex;
+    background-color: #3F51B5;
+    min-height: 5vh;
+}
+@media(max-width: 560px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+/* Container for the links at the top */
+#links-container {
+    width: 970px;
+    margin: 1rem auto;
+}
+@media(max-width: 768px) {
+    #links-container {
+        display: flex;
+        justify-content: space-between;
+        width: auto;
+        margin: 1rem 2vw;
+    }   
+}
+@media(min-width: 768px) {
+    #links-container {
+        width: 750px;
+        margin: 1rem auto;
+    }
+}
+@media(min-width: 992px) {
+    #links-container {
+        width: 970px;
+        margin: 1rem auto;
+    }
+}
+/* Styles for our links at the top */
+#links-container a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FFF;
+    font-weight: bold;
+    margin-right: 2rem;
+    opacity: .65;
+}
+#links-container a:hover {
+    opacity: 1;
+}
+#links-container a.active {
+    opacity: 1;
+    border-bottom: 3px solid #929292;
+}
+
+/* Headings */
+h1 {
+    font-size: 42px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 16px;
+}
+
+/* Title && subtitle! */
+#intro {
+    display: flex;
+}
+#intro > h2 {
+    text-transform: uppercase;
+    align-self: center;
+    margin-left: 1rem;
+    opacity: .65;
+}
+@media(max-width: 560px) {
+    #intro {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Log in / sign up */
+#user {
+    display: flex;
+    justify-content: flex-end;
+}
+#user a {
+    margin-left: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #2196f3;
+}
+
+/* Gornji natpis */
+#panel {
+    display: flex;
+    flex: 1 1 20em;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    padding: .5rem;
+    margin-top: 1rem;
+    background-color: #ffc107;
+    color: #222;
+}
+
+/* Carousel... */
+#carousel {
+    position: relative;
+    display: flex;
+    border: 3px solid #000;
+    border-radius: 5px;
+    margin-top: 3rem;
+    justify-content: space-around;
+    padding: 1rem;
+}
+#carousel > #desc {
+    width: 25%;
+}
+/* Responsiveness for the carousel */
+@media(max-width: 992px) {
+    #carousel {
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+        border: 3px solid #000;
+        border-radius: 5px;
+        margin-top: 3rem;
+        justify-content: space-around;
+        padding: 1rem;
+    }
+    #carousel > #desc {
+        width: 100%;
+    }
+}
+#carousel > #image {
+    width: 60%;
+    align-self: center;
+}
+#carousel > #desc > h2 {
+    text-align: left;
+}
+#carousel > #desc > p {
+    text-align: justify;
+    padding: .5rem .5rem 0 .5rem;
+}
+#carousel > #image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+#rating {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+}
+#rating > i.fa.fa-star-o, #rating > i.fa.fa-star {
+    margin-left: .5rem;
+    padding-top: .5rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+/* Carousel buttons */
+button {
+    border-radius: 5px;
+    background-color: #8bc34a;
+    color: #FFF;
+    font-weight: 700;
+    padding: .5rem;
+    border: 0;
+    font-size: 1rem;
+    font-family: inherit;
+}
+button:hover {
+    cursor: pointer;
+    color: #444;
+}
+#buttons {
+    display: flex;
+    flex-direction: column;
+}
+#buttons button {
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+#buttons button:first-child {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+/* Carousel arrows */
+#arrow-left {
+    position: absolute;
+    top: 50%;
+    left: -7%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+}
+#arrow-right {
+    position: absolute;
+    top: 50%;
+    right: -7%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+}
+.arrow-nav {
+    cursor: pointer;
+}
+.arrow-nav:hover {
+    opacity: .65;
+}
+/* Responsiveness for the arrows */
+@media(max-width: 992px) {
+    #arrow-left {
+        position: absolute;
+        top: 6%;
+        left: 1%;
+        font-size: 4rem;
+    }
+    #arrow-right {
+        position: absolute;
+        top: 6%;
+        right: 1%;
+        font-size: 4rem;
+    }
+}
+
+/* Images container */
+#images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    border: 3px solid #000;
+    border-radius: 5px;
+    padding: 2% 5% 2% 2%;
+}
+article {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex: 1 1 25%;
+    margin-left: 4%;
+}
+article > img {
+    /* Don't overflow */
+    max-width: 100%;
+    max-height: 100%;
+    align-items: center;
+    margin: auto;
+}
+article > .img-desc {
+    text-align: center;
+}
+article > .img-desc > button {
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+article > .fa.fa-times {
+    position: absolute;
+    top: -2%;
+    right: -2%;
+    font-size: 1.5rem;
+    color: #FF5722;
+    cursor: pointer;
+}
+#add-image {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: .5rem;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #424242;
+    color: #9e9e9e;
+    min-height: 5vh;
+    margin-top: 2%;
+}
+footer > #footer-icons {
+    display: flex;
+}
+#footer-icons i.fa {
+    font-size: 3rem;
+    margin-left: 2vw;
+}
+.fa-facebook-official {
+    color: #8b9dc3;
+}
+.fa-twitter-square {
+    color: #1dcaff;
+}
+footer > #footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#footer-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+#footer-links a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FFF;
+    font-weight: bold;
+    margin-right: 2rem;
+    opacity: .65;
+}
+#footer-links a:hover {
+    opacity: 1;
+}
+@media(max-width: 560px) {
+    footer {
+        flex-direction: column;
+    }
+    footer > #footer-links {
+        margin-top: 5vh;
+        justify-content: space-around;
+    }
+    footer > #footer-icons {
+        justify-content: center;
+    }
+}
