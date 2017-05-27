@@ -1,0 +1,107 @@
+body {
+    font-family: Georgia;
+    margin: 0;
+    display: flex; /* Zelimo da footer uvik bude doli header gori, zato body flexamo */
+    /* Po defaultu ce bit jedan pored drugog, pa moramo direction napravit  */
+    flex-direction: column;
+    min-height: 100vh; /* vh = viewport height (100% visine ekrana). Ima i vw. */
+}
+
+header {
+    display: block;
+    background-color: #2d5c88;
+    color: #FFF;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between; /* Ono prostora sta ostane da rasporedi nakon sta ih pozicionira */
+    /* 2 labela su inline pa ih stavi jedan pored drugog i onda stavi div ispod njih. Default flex je redak, jedan pored drugoga, a buduci da je ostalo prostora onda je uzea taj prostor i rasporedia ga izmedu elemenata. */
+}
+
+main > nav {
+    display: flex; /* jer zelimo da logo bude livo a ovo ostalo da se rasporediwriting-mode */
+    justify-content: space-between; /* jer around bi stavilo logo malo na sredinu */
+}
+
+.links-container {
+    align-self: center;
+    /* Znaci cili taj div alignaj ovisno o flexboxu u kojem se nalazi. Ovo ce ga centrirat. Shema. */
+}
+
+.links-container a {
+    background-color: #96AEC4;
+    margin-left: 1rem;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+}
+.links-container a.selected { /* Pazi da nema razmaka izmedu a i .selected !!! */
+    border-bottom: 3px solid #2b5c88;
+}
+
+#search-container {
+    display: flex; /* Ovo ih je spojilo :S */
+}
+
+#search-container .search-icon {
+    background-color: white;
+    color: gray;
+    height: 24px;
+    padding: 5px 5px 0 5px;
+    border-radius: 4px 0 0 4px;
+}
+
+#search-box {
+    border-radius: 0 4px 4px 0;
+    border: none;
+}
+
+footer {
+    background-color: #4e4e4e;
+    color: #8e8e8e;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+main {
+    flex: 1; /* Kako ce se slobodni prostor ponasat u odnosu na druge elemente. Koliki udio svog roditeljskog containera ce zadrzavat. Koliko relativno zauzima u odnosu na ostale. Ugl rasirit ce ga ka skroz tako da bude na kraju sve jednako velicini ekrana (viewporta, jel) */
+    width: 900px; /* "container", nije griddan ka u bootstrapu v3 nego ga manually definiramo alla materialDesignLite */
+    margin: 1rem auto; /* Gore i dole 1rem, a livo i desno automatski bazirano na screen widthu. Nesto tipa reponsivy */   
+}
+
+#thumbnails-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#thumbnails-container .thumbnail:hover {
+    cursor: pointer;
+    border-bottom: 3px solid #abbecf
+}
+
+#thumbnails-container .thumbnail.selected { /* Bez razmaka i jedno i drugo imaju klase (i thumbnail i selected), s razmakom .selected UNUTAR .thumbnail ! */
+    border-bottom: 3px solid #2b5c88;
+}
+
+#cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: space-between;*/
+}
+
+#cards-container .card {
+    width: 275px; /* Nisu gridovi, pa moras uvik... */
+    margin: 10px 15px 10px 0;
+    text-align: justify;
+    padding: 4px;
+    background-color: rgba(0, 0, 0, 0.14);
+    position: relative; /* Da se delete-button poziocionira relativno unutar ovog */
+}
+
+#cards-container .card .delete-button {
+    position: absolute; /* Apsolutno u odnosu na prvi nerelativni roditelj! */
+    /* Ili jednostavno, odma tu position relative i gg. */
+    /*float: right;*/
+    right: -0.2rem; 
+    top: -0.5rem;
+}
