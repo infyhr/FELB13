@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="hr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vježba 1</title>
+        
+        <style>
+            table {
+                border: 1px solid #000;
+            }
+            td {
+                border: 1px solid #CCC;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1>Programiranje za Internet – uvod u HTML</h1>
+        <p>
+            <strong>Toni Beović</strong><br>
+            <em>Programiranje za Internet</em><br>
+            <a href="#sidro">Idi na životopis</a>
+        </p>
+       
+        <img style="width: 600px; height: 600px" src="https://data.fesb.unist.hr/public/news/DE8A3266-5a52e49cd5-a1cf80bc7f-69fd8b8029.jpg" alt="FESB"><br>
+        <img src="./fesb-logo.png" alt="Logo FESB-a">
+        
+        <hr>
+        
+        <h2 id="sidro">Životopis</h2>
+        <ul>
+            <li><a href="http://www.split.hr/">Rođen u Splitu, 21.05.1995</a></li>
+            <li><a href="https://www.fesb.hr/" target="_blank">Student FESB-a</a></li>
+        </ul>
+        
+        <h2>Položeni predmeti</h2>
+        <table>
+            <tr>
+                <th>Naziv predmeta</th>
+                <th>Profesor</th>
+                <th>Semestar</th>
+                <th>Ocjena</th>
+            </tr>
+            <tr>
+                <td>Elektrotehnika</td>
+                <td>Slavko Vujević</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Engleski Jezik 1</td>
+                <td>Daniela Matić</td>
+                <td>1</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Fizika 1</td>
+                <td>Ilja Doršner</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Matematika 1</td>
+                <td>Josipa Barić</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Uvod u računala i programiranje</td>
+                <td>Mirjana Bonković</td>
+                <td>1</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Elektronika</td>
+                <td>Tihomir Betti</td>
+                <td>2</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Engleski jezik 2</td>
+                <td>Daniela Matić</td>
+                <td>2</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Fizika 2</td>
+                <td>Ilja Doršner</td>
+                <td>2</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Matematika 2</td>
+                <td>Josipa Barić</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Programiranje</td>
+                <td>Damir Vučina</td>
+                <td>2</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Diskretna matematika</td>
+                <td>Josipa Barić</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Diskretni sustavi i strukture</td>
+                <td>Julije Ožegović</td>
+                <td>3</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Komunikacijske vještine</td>
+                <td>Mirjana Matea Kovač</td>
+                <td>3</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Objektno orijentirano programiranje</td>
+                <td>Ivo Mateljan</td>
+                <td>3</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Praktikum</td>
+                <td>Spomenka Bovan</td>
+                <td>3</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Strukture podataka</td>
+                <td>Linda Vicković</td>
+                <td>3</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Algoritmi</td>
+                <td>Matko Šarić</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Arhitektura digitalnih računala</td>
+                <td>Sven Gotovac</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Baze podataka</td>
+                <td>Vladan Papić</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Signali i sustavi</td>
+                <td>Tamara Grujić</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Vjerojatnost i statistika</td>
+                <td>Ante Rozga</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+        </table>
+        
+        <div style="text-align: center">@FESB</div>
+        
+        <hr>
+        
+        <form name="contact" action="#">
+            <label for="name">Ime: </label> <input id="name" type="text"><br>
+            <label for="lastname">Prezime: </label> <input id="lastname" type="text"><br>
+            <label for="date">Datum: </label><input id="date" type="date"><br>
+            <label for="message">Poruka: </label><br>
+            <textarea id="message" cols="50" rows="5"></textarea><br>
+            <input type="submit" value="Pošalji">
+        </form>
+        
+        <hr>
+        
+        <a href="https://fesb.hr" target="_blank">
+            <img style="width: 300px; height: 150px" src="http://marjan.fesb.hr/~jmusic/josip_files/FESB.gif" alt="FESB">
+        </a>
+    </body>
+</html>

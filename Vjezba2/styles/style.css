@@ -1,0 +1,68 @@
+body {
+    font-family: Georgia;
+}
+p {
+    text-align: justify;
+}
+table > tr {
+    border: 1px solid #000;
+}
+#info-paragraph strong {
+    font-weight: 700;
+    background-color: pink;
+    border: 3px solid #FF0000;
+}
+#info-paragraph {
+    max-width: 50%;
+    background-color: gray;
+    padding: .7rem;
+    margin-bottom: 1rem;
+}
+#info-paragraph {
+    border-radius: 5px;
+}
+#info-paragraph em {
+    color: #00FF00;
+}
+.image {
+    border-radius: 5px;
+    width: 250px;
+}
+h1 {
+    color: darkgray;
+}
+h2 {
+   font-size: 1.5rem; 
+}
+h2:first-letter {
+    color: #FF0000;
+    font-size: 2rem;
+}
+#subjects-table thead {
+    background-color: lightblue;
+}
+#subjects-table > tbody > tr:nth-child(2n) {
+    background-color: lightgray;
+}
+#subjects-table > tbody > tr:nth-child(2n+1) {
+    background-color: lightcoral;
+}
+/*#subjects-table tr > td[colspan="2"] { /* Centriraj FESB
+    text-align: center;
+}*/
+#subjects-table td:nth-child(2) {
+    color: green;
+}
+#subjects-table,
+#subjects-table th,
+#subjects-table td {
+    border: 2px solid #000;
+    padding: 5px;
+    border-collapse: collapse;
+}
+#subjects-table tfoot {
+    text-align: center;
+}
+input[type="text"]:focus {
+    border: 2px solid #blue;
+}
